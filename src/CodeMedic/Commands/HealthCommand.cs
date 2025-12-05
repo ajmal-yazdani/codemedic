@@ -16,6 +16,7 @@ public class HealthCommand
 	/// <summary>
 	/// Initializes a new instance of the <see cref="HealthCommand"/> class.
 	/// </summary>
+	/// <param name="renderer">The renderer to use for displaying output.</param>
 	/// <param name="targetPath">The path to scan. If null, scans current directory.</param>
 	public HealthCommand(IRenderer renderer, string? targetPath = null)
     {
@@ -31,7 +32,7 @@ public class HealthCommand
     {
         try
         {
-            _Renderer.RenderBanner(GetVersion());
+            _Renderer.RenderBanner();
             _Renderer.RenderSectionHeader("Repository Health Dashboard");
 
             // Scan repository
